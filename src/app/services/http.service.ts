@@ -6,10 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
   private http = inject(HttpClient);
+  private api = 'https://pokeapi.co/api/v2'
 
   constructor() { }
 
-  getPokemon() {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200');
+  getAllPokemonSimpleForm(limit: number = 1025) {
+    // Esse método serve para buscar todos os pokémons de forma direta, pegando a versão base deles, sem mega evoluções ou outras variações.
+    return this.http.get(`${this.api}/pokemon?limit=${limit}`);
   } 
 }

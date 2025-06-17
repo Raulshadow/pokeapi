@@ -4,6 +4,9 @@
       PokeApi
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchChange()" placeholder="Busque pelo seu pokemon!"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -12,9 +15,9 @@
       <h1><strong>Pokemons:</strong></h1>
     </ion-row>
 
-    <ion-row *ngFor="let pokemon of pokemons; let i = index">
-      <ion-item button style="width: 100%;" (click)="showPokemonDetails(i + 1)">
-        <h3 [innerText]="pokemon.name"></h3>
+    <ion-row *ngFor="let pokemon of filtredPokemons; let i = index">
+      <ion-item button style="width: 100%;">
+        <h3 [innerText]="pokemon.id + ' - ' + pokemon.name"></h3>
       </ion-item>
     </ion-row>
   </ion-grid>
