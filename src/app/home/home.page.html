@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      PokeApi
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <h1><strong>Pokemons:</strong></h1>
+    </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-row *ngFor="let pokemon of pokemons; let i = index">
+      <ion-item button style="width: 100%;" (click)="showPokemonDetails(i + 1)">
+        <h3 [innerText]="pokemon.name"></h3>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
 </ion-content>
