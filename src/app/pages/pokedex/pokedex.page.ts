@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonItem, IonSearchbar } from '@ionic/angular/standalone';
-import { HttpService } from '../services/http.service';
+import { HttpService } from '../../services/http.service';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
