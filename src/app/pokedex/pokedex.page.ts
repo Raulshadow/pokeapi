@@ -5,12 +5,12 @@ import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-pokedex',
+  templateUrl: 'pokedex.page.html',
+  styleUrls: ['pokedex.page.scss'],
   imports: [NgFor, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonItem, IonSearchbar, FormsModule]
 })
-export class HomePage implements OnInit {
+export class PokedexPage implements OnInit {
   private httpService = inject(HttpService); // Injetando o serviço HTTP para fazer requisições à PokeAPI.
   public allPokemons: any[] = [];
   public filtredPokemons: any[] = [];
@@ -36,7 +36,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    // Método de inicialização da home page, onde é feito o carregamento dos pokémons.
+    // Método de inicialização da pokedex page, onde é feito o carregamento dos pokémons.
     this.getPokemons();
   }
 

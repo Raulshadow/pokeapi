@@ -2,7 +2,7 @@
 
 ## Ideia do Projeto
 1. Construir uma aplicação simples de listagem, para se reacostumar com as tecnologias.
-2. Primeira tela ser a home page, adicionando a listagem de todos pokémons com um filtro de busca.
+2. Primeira tela ser a Pokedex page, adicionando a listagem de todos pokémons com um filtro de busca.
 3. Aplicar rotas, colocando navegação de abas, adicionando 2 páginas a mais, uma sobre Regiões de pokémon (ex: Kanto), e outra sobre as versões dos games, se possível adicionar a capa de cada jogo no campo de seleção da lista.
 4. Criadas todas as telas desejadas, adicionar uma navegação no click das listas:
     1. Tela de Listagem de Pokémon:
