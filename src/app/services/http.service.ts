@@ -14,4 +14,9 @@ export class HttpService {
     // Esse método serve para buscar todos os pokémons de forma direta, pegando a versão base deles, sem mega evoluções ou outras variações.
     return this.http.get(`${this.api}/pokemon?limit=${limit}`);
   } 
+
+  getAllRegions() {
+    // Esse método serve para buscar todas as regiões da PokeAPI.
+    return this.http.get(`${this.api}/region`);
+  }
 }
