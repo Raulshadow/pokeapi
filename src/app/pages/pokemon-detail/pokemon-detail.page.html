@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <ion-buttons>
+          <ion-back-button defaultHref="/pokedex"></ion-back-button>
+        </ion-buttons>
+        <span>{{ pokemon?.name | titlecase}}</span>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="pokemon" [fullscreen]="true">
+  <ion-card>
+    <img [src]="pokemon.image" />
+
+    <ion-card-header>
+      <ion-card-title>{{ pokemon.name | titlecase }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="4">
+          <strong>Numero da Pokedex:</strong> {{ pokemon.id }}
+        </ion-col>
+        <ion-col size="4">
+          <strong>Altura:</strong> {{ pokemon.height / 10 }} m
+        </ion-col>
+        <ion-col size="4">
+          <strong>Peso:</strong> {{ pokemon.weight / 10 }} kg
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <strong>Tipos:</strong>
+          <span *ngFor="let type of pokemon.types; let last = last">
+            {{ type.type.name | titlecase }}<span *ngIf="!last">, </span>
+          </span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <strong>Habilidades:</strong>
+          <span *ngFor="let ability of pokemon.abilities; let last = last">
+            {{ ability.ability.name | titlecase }}<span *ngIf="!last">, </span>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
