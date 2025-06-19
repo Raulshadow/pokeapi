@@ -18,12 +18,11 @@ export class RegionsPage implements OnInit {
 
   constructor() { }
 
-  getRegions() {
+  private getRegions() {
     // Recebendo todas as regiões da PokeAPI.
     this.httpService.getAllRegions().subscribe((data: any) => {
       this.regions = data.results;
     });
-    console.log(this.regions);
   }
    
   getRegionImage(name: string): string {
