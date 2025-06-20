@@ -15,8 +15,12 @@ export class HttpService {
     return this.http.get(`${this.api}/pokemon?limit=${limit}`);
   }
 
-  getAllPokemonGames(limit: number = 47) {
-    // Esse método serve para buscar todos os as versões dos jogos da franquia. Infelizmente ele ainda vem com dlcs e spinoffs, tratar no games.ps.
-    return this.http.get(`${this.api}/version?limit=${limit}`);
+  getAllPokemonGames(limit: number = 25) {
+    // Esse método serve para buscar todos os as versões dos jogos da franquia evitando pegar as últimas dlcs e versões japonesas. Infelizmente ele ainda vem com dlcs e spinoffs, tratar no games.ps.
+    return this.http.get(`${this.api}/version-group?limit=${limit}`);
+  }
+
+  getGameDetail(id: number) {
+    return this.http.get(`${this.api}/version-group/${id}`)
   }
 }

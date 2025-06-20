@@ -6,12 +6,12 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let game of gamesVersions" lines="full">
+    <ion-item button *ngFor="let gameVersion of gamesVersions" [routerLink]="['/game', gameVersion.id]" lines="full">
       <ion-avatar slot="start">
-        <img [src]="getGameImage(game.name)" alt="{{ game.name }}">
+        <img [src]="getGameImage(gameVersion.name)" alt="{{ gameVersion.name }}">
       </ion-avatar>
       <ion-label>
-        {{ formatGameName(game.name) | titlecase }}
+        {{ "Pokémon " + formatName(gameVersion.name) }}
       </ion-label>
     </ion-item>
   </ion-list>
