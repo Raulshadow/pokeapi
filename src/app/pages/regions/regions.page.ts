@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonLabel, IonList, IonItem, IonAvatar } from '@ionic/angular/standalone';
 import { NgFor } from '@angular/common';
 import { HttpService } from 'src/app/services/http.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-regions',
   templateUrl: './regions.page.html',
   styleUrls: ['./regions.page.scss'],
   standalone: true,
-  imports: [NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonList, IonItem, IonAvatar]
+  imports: [NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonList, IonItem, IonAvatar, RouterLink]
 })
 export class RegionsPage implements OnInit {
   private httpService = inject(HttpService);

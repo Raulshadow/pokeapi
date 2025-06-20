@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/regions"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ formatName(region?.name) }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="region">
+  <ion-card>
+    <img
+      [src]="getRegionImage(region.name)"
+      [alt]="region.name"
+      class="region-map"
+    />
+    <ion-card-header>
+      <ion-card-title>{{ formatName(region.name) }}</ion-card-title>
+      <ion-card-subtitle>
+        Geração Principal: {{ formatName(region.main_generation?.name ||
+        'desconhecida') }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Pokédexes:</strong></p>
+      <ion-list *ngIf="region.pokedexes.length > 0; else noDex">
+        <ion-item *ngFor="let dex of region.pokedexes">
+          <ion-label>{{ formatName(dex.name) }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ng-template #noDex>
+        <p>Nenhuma pokédex associada.</p>
+      </ng-template>
+
+      <p><strong>Versões de Jogos:</strong></p>
+      <ion-list>
+        <ion-item *ngFor="let group of region.version_groups">
+          <ion-label>{{ formatName(group.name) }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <p><strong>Locais da Região:</strong></p>
+      <ion-list>
+        <ion-item *ngFor="let loc of region.locations.slice(0, 10)">
+          <ion-label>{{ formatName(loc.name) }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

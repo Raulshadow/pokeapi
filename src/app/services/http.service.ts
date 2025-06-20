@@ -19,4 +19,8 @@ export class HttpService {
     // Esse método serve para buscar todas as regiões da PokeAPI.
     return this.http.get(`${this.api}/region`);
   }
+
+  getRegionDetail(name: string) {
+    return this.http.get(`${this.api}/region/${name}`);
+  }
 }

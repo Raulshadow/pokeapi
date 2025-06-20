@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let region of regions" lines="full">
+    <ion-item button *ngFor="let region of regions" lines="full" [routerLink] = "['/region', region.name]">
       <ion-avatar slot="start">
         <img [src]="getRegionImage(region.name)" alt="{{ region.name }}">
       </ion-avatar>
