@@ -15,9 +15,15 @@ Acesse em: https://github.com/Raulshadow/pokeapi
 5. Melhorar a experiência do usuário e interação do usuário ao possível, reconhecendo o básico da ergonomia, visto que não possuo o talento para design, mas consigo construir aquilo que é me pedido.
 
 17/06 - Inicio do projeto e página inicial, tela pokédex (listagem de pokémon).
+
 18/06 - Adição da tela de detalhes do pokémon.
+
 19/06 - Feriado/Aniversário - Poucas alterações, Adição das abas, telas de listagem de região e de jogos da franquia.
+
 20/06 - Adição da tela de detalhes da região e do grupo de jogos da Franquia, completa no mesmo dia.
+
 22-21/06 - Final de Semana/Compromissos
+
 23/06 - Criação do projeto, administrando as branches e organizando as ideias para produção.
+
 24/06 - Merge de Branches e adição de estilização melhorada.
