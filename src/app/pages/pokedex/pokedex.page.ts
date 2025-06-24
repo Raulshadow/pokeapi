@@ -1,14 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonItem, IonSearchbar } from '@ionic/angular/standalone';
 import { HttpService } from '../../services/http.service';
-import { NgFor } from '@angular/common';
+import { NgFor, TitleCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex',
   templateUrl: 'pokedex.page.html',
   styleUrls: ['pokedex.page.scss'],
-  imports: [NgFor, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonItem, IonSearchbar, FormsModule]
+  imports: [TitleCasePipe, NgFor, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonItem, IonSearchbar, FormsModule, RouterLink]
 })
 export class PokedexPage implements OnInit {
   private httpService = inject(HttpService); // Injetando o serviço HTTP para fazer requisições à PokeAPI.

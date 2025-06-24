@@ -23,4 +23,18 @@ export class HttpService {
   getGameDetail(id: number) {
     return this.http.get(`${this.api}/version-group/${id}`)
   }
+
+  getPokemonByName(name: string) {
+    // Esse método serve para buscar um pokémon específico pelo nome.
+    return this.http.get(`${this.api}/pokemon/${name}`);
+  } 
+
+  getAllRegions() {
+    // Esse método serve para buscar todas as regiões da PokeAPI.
+    return this.http.get(`${this.api}/region`);
+  }
+
+  getRegionDetail(name: string) {
+    return this.http.get(`${this.api}/region/${name}`);
+  }
 }

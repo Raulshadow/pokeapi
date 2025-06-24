@@ -16,8 +16,8 @@
     </ion-row>
 
     <ion-row *ngFor="let pokemon of filtredPokemons; let i = index">
-      <ion-item button style="width: 100%;">
-        <h3 [innerText]="pokemon.id + ' - ' + pokemon.name"></h3>
+      <ion-item [routerLink]="['/pokemon', pokemon.name]" button style="width: 100%;">
+        <h3>{{ pokemon.id + ' - ' + (pokemon.name | titlecase) }}</h3>
       </ion-item>
     </ion-row>
   </ion-grid>
