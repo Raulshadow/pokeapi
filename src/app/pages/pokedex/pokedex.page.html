@@ -1,24 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>
-      PokeApi
-    </ion-title>
+    <ion-title>PokeApi</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchChange()" placeholder="Busque pelo seu pokemon!"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchChange()" placeholder="Busque pelo seu pokémon!"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="pokemon-list">
   <ion-grid>
     <ion-row>
-      <h1><strong>Pokemons:</strong></h1>
+      <ion-col size="12">
+        <h2><strong>Pokémons:</strong></h2>
+      </ion-col>
     </ion-row>
 
-    <ion-row *ngFor="let pokemon of filtredPokemons; let i = index">
-      <ion-item [routerLink]="['/pokemon', pokemon.name]" button style="width: 100%;">
-        <h3>{{ pokemon.id + ' - ' + (pokemon.name | titlecase) }}</h3>
-      </ion-item>
+    <ion-row>
+      <ion-col
+        *ngFor="let pokemon of filtredPokemons"
+        size="6"
+        size-md="4"
+        size-lg="3"
+        size-xl="2"
+      >
+        <ion-card [routerLink]="['/pokemon', pokemon.name]" button>
+          <img [src]="pokemon.image" [alt]="pokemon.name" />
+          <ion-card-header>
+            <ion-card-title>#{{ pokemon.id }} - {{ pokemon.name | titlecase }}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
