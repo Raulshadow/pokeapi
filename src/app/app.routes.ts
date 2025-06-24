@@ -6,8 +6,11 @@ export const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
   },
   {
+    path: 'pokemon/:name',
+    loadComponent: () => import('./pages/pokemon-detail/pokemon-detail.page').then( m => m.PokemonDetailPage)
+  },
+  {
     path: 'region/:name',
     loadComponent: () => import('./pages/region-detail/region-detail.page').then( m => m.RegionDetailPage)
   },
-
 ];
