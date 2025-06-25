@@ -25,7 +25,6 @@ export class RegionDetailPage implements OnInit {
 
   ngOnInit() {
     const name = this.route.snapshot.paramMap.get('name');
-    console.log(name)
     this.getRegionDetail(name || '');
   }
 
@@ -33,7 +32,6 @@ export class RegionDetailPage implements OnInit {
     // Recebendo dados da região em específico procurando pelo nome
     this.httpService.getRegionDetail(name).subscribe((data: any) => {
       this.region = data;
-      console.log(this.region)
     });
   }
 

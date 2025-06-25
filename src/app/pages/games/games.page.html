@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Jogos Pokemon</ion-title>
+    <ion-title>Jogos Pokémon</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="games-list" [fullscreen]="true">
   <ion-list>
-    <ion-item button *ngFor="let gameVersion of gamesVersions" [routerLink]="['/game', gameVersion.id]" lines="full">
+    <ion-item
+      button 
+      *ngFor="let gameVersion of gamesVersions"
+      [routerLink]="['/game', gameVersion.id]"
+      lines="full"
+    >
       <ion-avatar slot="start">
-        <img [src]="getGameImage(gameVersion.name)" alt="{{ gameVersion.name }}">
+        <img [src]="getGameImage(gameVersion.name)" alt="{{ gameVersion.name }}" />
       </ion-avatar>
-      <ion-label>
-        {{ "Pokémon " + formatName(gameVersion.name) }}
+
+      <ion-label class="game-title">
+        Pokémon {{ formatName(gameVersion.name) }}
       </ion-label>
     </ion-item>
   </ion-list>

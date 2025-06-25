@@ -1,13 +1,31 @@
-ion-item {
-  --min-height: 100px;
-}
+.regions-list {
+  ion-item {
+    --inner-padding-end: 12px;
+    --inner-padding-start: 12px;
+    min-height: 88px;
+    
+    ion-avatar {
+      width: 88px;
+      height: 88px;
 
-ion-avatar {
-  width: 72px;
-  height: 72px;
-}
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+      }
+    }
 
-ion-label h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
+    ion-label h2 {
+      font-size: clamp(1.2rem, 1.5vw, 1.7rem);
+      font-weight: 600;
+      margin: 0;
+      white-space: normal;
+    }
+  }
+
+  ion-list {
+    padding: 0 8px;
+  }
 }

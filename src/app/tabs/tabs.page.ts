@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonLabel, IonIcon, IonTabButton, IonTabBar, IonTabs } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import * as allIcons from 'ionicons/icons'
 
 @Component({
   selector: 'app-tabs',
@@ -12,7 +14,9 @@ import { IonLabel, IonIcon, IonTabButton, IonTabBar, IonTabs } from '@ionic/angu
 })
 export class TabsPage implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    addIcons(allIcons)
+  }
 
   ngOnInit() {
   }
