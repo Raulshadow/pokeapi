@@ -15,12 +15,18 @@ export class HttpService {
     return this.http.get(`${this.api}/pokemon?limit=${limit}`);
   }
 
+  getPokemonDescription(name:string) {
+    // Esse método serve para buscar a descrição da pokédex baseado no nome do pokémon, é possível que ele possa ter a versão em português
+    return this.http.get(`${this.api}/pokemon-species/${name}`);
+  }
+
   getAllPokemonGames(limit: number = 25) {
     // Esse método serve para buscar todos os as versões dos jogos da franquia evitando pegar as últimas dlcs e versões japonesas. Infelizmente ele ainda vem com dlcs e spinoffs, tratar no games.ps.
     return this.http.get(`${this.api}/version-group?limit=${limit}`);
   }
 
   getGameDetail(id: number) {
+    // Esse método serve para auxiliar e pegar os detalhes da versão do grupo.
     return this.http.get(`${this.api}/version-group/${id}`)
   }
 
@@ -35,6 +41,7 @@ export class HttpService {
   }
 
   getRegionDetail(name: string) {
+    // Esse método serve para auxiliar e pegar os detalhes da Região.
     return this.http.get(`${this.api}/region/${name}`);
   }
 }

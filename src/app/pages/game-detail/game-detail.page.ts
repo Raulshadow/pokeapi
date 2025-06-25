@@ -5,6 +5,7 @@ import { IonGrid, IonCol, IonRow, IonContent, IonHeader, IonTitle, IonToolbar, I
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { GameUtilsService } from 'src/app/services/game-utils.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-game-detail',
@@ -20,7 +21,7 @@ export class GameDetailPage implements OnInit {
   gameVersionGroup: any = null;
   isLoading: boolean = true;
 
-  constructor(private utils: GameUtilsService) { }
+  constructor(private gameUtils: GameUtilsService, private utils:UtilsService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -28,7 +29,7 @@ export class GameDetailPage implements OnInit {
   }
 
   getGameImage(name:string) {
-    return this.utils.getGameImage(name);
+    return this.gameUtils.getGameImage(name);
   }
 
   formatName(name:string) {

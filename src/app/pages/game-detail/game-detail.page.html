@@ -7,34 +7,55 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="gameVersionGroup">
+<ion-content *ngIf="gameVersionGroup" class="game-details">
   <ion-card>
-    <img [src]="getGameImage(gameVersionGroup.name)" [alt]="gameVersionGroup.name" class="game-image">
+    <img [src]="getGameImage(gameVersionGroup.name)" [alt]="gameVersionGroup.name" class="game-image" />
+
     <ion-card-header>
       <ion-card-title>{{ formatName(gameVersionGroup.name) }}</ion-card-title>
-      <ion-card-subtitle>Geração: {{ formatName(gameVersionGroup.generation.name) }}</ion-card-subtitle>
+      <ion-card-subtitle>
+        Geração: {{ formatName(gameVersionGroup.generation.name) }}
+      </ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      <p><strong>Região:</strong> {{ formatName(gameVersionGroup.regions[0]?.name || 'Desconhecida') }}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6">
+            <h3>Região:</h3>
+            <p>{{ formatName(gameVersionGroup.regions[0]?.name || 'Desconhecida') }}</p>
+          </ion-col>
 
-      <p><strong>Pokédex associada:</strong>
-        <span *ngFor="let dex of gameVersionGroup.pokedexes; let last = last">
-          {{ formatName(dex.name) }}<span *ngIf="!last">, </span>
-        </span>
-      </p>
+          <ion-col size="12" size-md="6">
+            <h3>Pokédex associada:</h3>
+            <p>
+              <span *ngFor="let dex of gameVersionGroup.pokedexes; let last = last">
+                {{ formatName(dex.name) }}<span *ngIf="!last">, </span>
+              </span>
+            </p>
+          </ion-col>
+        </ion-row>
 
-      <p><strong>Versões desse grupo:</strong></p>
-      <ion-list>
-        <ion-item *ngFor="let version of gameVersionGroup.versions">
-          <ion-label>{{ formatName(version.name) }}</ion-label>
-        </ion-item>
-      </ion-list>
+        <ion-row>
+          <ion-col size="12">
+            <h3>Versões dos Jogos:</h3>
+            <ion-list>
+              <ion-item *ngFor="let version of gameVersionGroup.versions">
+                <ion-label>{{ formatName(version.name) }}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
 
-      <p><strong>Métodos de aprendizado de movimento:</strong></p>
-      <ion-chip *ngFor="let method of gameVersionGroup.move_learn_methods" color="tertiary">
-        {{ formatName(method.name) }}
-      </ion-chip>
+        <ion-row>
+          <ion-col size="12">
+            <h3>Métodos de aprendizado de movimento</h3>
+            <ion-chip *ngFor="let method of gameVersionGroup.move_learn_methods" color="tertiary">
+              {{ formatName(method.name) }}
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>

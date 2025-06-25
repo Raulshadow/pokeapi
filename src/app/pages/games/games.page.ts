@@ -6,6 +6,7 @@ import { NgFor } from '@angular/common';
 import { HttpService } from 'src/app/services/http.service';
 import { RouterLink } from '@angular/router';
 import { GameUtilsService } from 'src/app/services/game-utils.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-games',
@@ -18,14 +19,14 @@ export class GamesPage implements OnInit {
   private httpService = inject(HttpService);
   public gamesVersions: any[] = [];
 
-  constructor(private utils: GameUtilsService) {}
+  constructor(private gameUtils: GameUtilsService, private utils: UtilsService) {}
 
   ngOnInit() {
     this.getAllGames();
   }
 
   getGameImage(name:string) {
-    return this.utils.getGameImage(name);
+    return this.gameUtils.getGameImage(name);
   }
 
   formatName(name:string) {
