@@ -27,3 +27,7 @@ Acesse em: https://github.com/Raulshadow/pokeapi
 23/06 - Criação do projeto, administrando as branches e organizando as ideias para produção.
 
 24/06 - Merge de Branches e adição de estilização melhorada.
+
+25/06 - Continuando adicionando estilização, Colocando uma versão melhorada para as telas de listagem de jogos e regiões, e melhorando a visualização de detalhes do pokémon e do jogo, a região pretendo observar algumas opções de trazer mais coisas, caso possível.
+
+26/06 - Continuando adicionando estilização.
