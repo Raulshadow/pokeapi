@@ -20,8 +20,6 @@ export class RegionDetailPage implements OnInit {
   private route = inject(ActivatedRoute);
 
   region: any = null;
-  isLoading: boolean = true;
-
   constructor(private utils: UtilsService, private regionUtils: RegionUtilsService) { }
 
   ngOnInit() {

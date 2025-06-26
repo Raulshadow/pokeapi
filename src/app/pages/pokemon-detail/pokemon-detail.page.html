@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="pokemon" class="pokemon-details" [fullscreen]="true">
+<ion-content *ngIf="pokemon; else loading" class="pokemon-details" [fullscreen]="true">
   <ion-card>
     <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image" />
 
@@ -71,3 +71,13 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+<ng-template #loading>
+  <ion-content>
+    <ion-spinner
+      name="crescent"
+      style="margin: 2rem auto; display: block"
+    ></ion-spinner>
+    <p style="text-align: center">Carregando dados do pokémon...</p>
+  </ion-content>
+</ng-template>

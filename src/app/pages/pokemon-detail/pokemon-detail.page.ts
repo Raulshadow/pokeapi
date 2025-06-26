@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { forkJoin } from 'rxjs';
-import { IonChip, IonGrid, IonLabel, IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonRow, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonBackButton, IonButtons } from '@ionic/angular/standalone';
+import { IonSpinner, IonChip, IonGrid, IonLabel, IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonRow, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonBackButton, IonButtons } from '@ionic/angular/standalone';
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,14 +11,13 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './pokemon-detail.page.html',
   styleUrls: ['./pokemon-detail.page.scss'],
   standalone: true,
-  imports: [IonChip, IonGrid, IonLabel, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCol, IonRow, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonBackButton, IonButtons ]
+  imports: [IonChip, IonGrid, IonLabel, IonSpinner, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCol, IonRow, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonBackButton, IonButtons ]
 })
 export class PokemonDetailPage implements OnInit {
   private httpService = inject(HttpService); // Injetando o serviço HTTP para fazer requisições à PokeAPI.
   private route = inject(ActivatedRoute); // Injetando o serviço de rotas para obter parâmetros da URL.
 
   pokemon: any = null;
-  isLoading: boolean = true;
 
   constructor() {}
 
@@ -46,12 +45,9 @@ export class PokemonDetailPage implements OnInit {
           description: description, // adicionando a descrição ao objeto
           image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${details.id}.png`,
         };
-
-        this.isLoading = false;
       },
       error: (error) => {
         console.error('Erro ao obter detalhes do Pokémon:', error);
-        this.isLoading = false;
       },
     });
   }
