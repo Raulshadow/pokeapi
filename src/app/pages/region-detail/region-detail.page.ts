@@ -1,18 +1,19 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonItem, IonList, IonButtons, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton } from '@ionic/angular/standalone';
+import { IonSpinner, IonContent, IonCard, IonItem, IonList, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton, IonButtons, IonTitle, IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { RegionUtilsService } from 'src/app/services/region-utils.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-region-detail',
   templateUrl: './region-detail.page.html',
   styleUrls: ['./region-detail.page.scss'],
   standalone: true,
-  imports: [NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCard, IonItem, IonList, IonButtons, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton]
+  imports: [NgFor, IonToolbar, IonHeader, IonTitle, IonSpinner, IonContent, CommonModule, FormsModule, IonCard, IonItem, IonList, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton, IonButtons, RouterLink]
 })
 export class RegionDetailPage implements OnInit {
   private httpService = inject(HttpService);

@@ -1,0 +1,64 @@
+.region-content {
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  background: #f8f8f8;
+}
+
+.region-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.region-card {
+  .region-map {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: auto;
+    display: block;
+  }
+
+  section {
+    margin-top: 1.5rem;
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #3a3a3a;
+    }
+
+    ion-list {
+      border-radius: 8px;
+    }
+
+    ion-item {
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+// Responsivo para telas maiores
+@media (min-width: 768px) {
+  .region-card {
+    .region-map {
+      max-height: 400px;
+    }
+
+    section {
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    ion-card-title {
+      font-size: 1.8rem;
+    }
+
+    ion-card-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+}

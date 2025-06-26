@@ -7,45 +7,68 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="region">
-  <ion-card>
-    <img
-      [src]="getRegionImage(region.name)"
-      [alt]="region.name"
-      class="region-map"
-    />
-    <ion-card-header>
-      <ion-card-title>{{ formatName(region.name) }}</ion-card-title>
-      <ion-card-subtitle>
-        Geração Principal: {{ formatName(region.main_generation?.name ||
-        'desconhecida') }}
-      </ion-card-subtitle>
-    </ion-card-header>
+<ion-content *ngIf="region; else loading" class="ion-padding region-content">
+  <div class="region-container">
+    <ion-card class="region-card">
+      <img
+        [src]="getRegionImage(region.name)"
+        [alt]="region.name"
+        class="region-map"
+      />
 
-    <ion-card-content>
-      <p><strong>Pokédexes:</strong></p>
-      <ion-list *ngIf="region.pokedexes.length > 0; else noDex">
-        <ion-item *ngFor="let dex of region.pokedexes">
-          <ion-label>{{ formatName(dex.name) }}</ion-label>
-        </ion-item>
-      </ion-list>
-      <ng-template #noDex>
-        <p>Nenhuma pokédex associada.</p>
-      </ng-template>
+      <ion-card-header class="text-center">
+        <ion-card-title>{{ formatName(region.name) }}</ion-card-title>
+        <ion-card-subtitle>
+          Geração Principal: {{ formatName(region.main_generation?.name ||
+          'Desconhecida') }}
+        </ion-card-subtitle>
+      </ion-card-header>
 
-      <p><strong>Versões de Jogos:</strong></p>
-      <ion-list>
-        <ion-item *ngFor="let group of region.version_groups">
-          <ion-label>{{ formatName(group.name) }}</ion-label>
-        </ion-item>
-      </ion-list>
+      <ion-card-content>
+        <section>
+          <h3>Pokédexes</h3>
+          <ion-list *ngIf="region.pokedexes.length > 0; else noDex">
+            <ion-item *ngFor="let dex of region.pokedexes">
+              <ion-label>{{ formatName(dex.name) }}</ion-label>
+            </ion-item>
+          </ion-list>
+          <ng-template #noDex>
+            <p>Nenhuma pokédex associada.</p>
+          </ng-template>
+        </section>
 
-      <p><strong>Locais da Região:</strong></p>
-      <ion-list>
-        <ion-item *ngFor="let loc of region.locations.slice(0, 10)">
-          <ion-label>{{ formatName(loc.name) }}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+        <section>
+          <h3>Versões de Jogos</h3>
+          <ion-list>
+            <ion-item 
+              *ngFor="let group of region.version_groups"
+              [routerLink]="['/game', group.name]"
+              button
+            >
+              <ion-label>{{ formatName(group.name) }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </section>
+
+        <section>
+          <h3>Locais da Região</h3>
+          <ion-list>
+            <ion-item *ngFor="let loc of region.locations.slice(0, 10)">
+              <ion-label>{{ formatName(loc.name) }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </section>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
+
+<ng-template #loading>
+  <ion-content>
+    <ion-spinner
+      name="crescent"
+      style="margin: 2rem auto; display: block"
+    ></ion-spinner>
+    <p style="text-align: center">Carregando dados da região...</p>
+  </ion-content>
+</ng-template>

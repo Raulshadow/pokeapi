@@ -6,13 +6,14 @@ import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { GameUtilsService } from 'src/app/services/game-utils.service';
 import { UtilsService } from 'src/app/services/utils.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-game-detail',
   templateUrl: './game-detail.page.html',
   styleUrls: ['./game-detail.page.scss'],
   standalone: true,
-  imports: [IonGrid, IonCol, IonRow, NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonChip, IonCard, IonItem, IonList, IonButtons, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton]
+  imports: [IonGrid, IonCol, IonRow, NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonChip, IonCard, IonItem, IonList, IonButtons, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton, RouterLink]
 })
 export class GameDetailPage implements OnInit {
   private httpService = inject(HttpService);

@@ -3,13 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/games"></ion-back-button>
     </ion-buttons>
-    <ion-title *ngIf="gameVersionGroup">{{ formatName(gameVersionGroup?.name) }}</ion-title>
+    <ion-title *ngIf="gameVersionGroup"
+      >{{ formatName(gameVersionGroup?.name) }}</ion-title
+    >
   </ion-toolbar>
 </ion-header>
 
 <ion-content *ngIf="gameVersionGroup" class="game-details">
   <ion-card>
-    <img [src]="getGameImage(gameVersionGroup.name)" [alt]="gameVersionGroup.name" class="game-image" />
+    <img
+      [src]="getGameImage(gameVersionGroup.name)"
+      [alt]="gameVersionGroup.name"
+      class="game-image"
+    />
 
     <ion-card-header>
       <ion-card-title>{{ formatName(gameVersionGroup.name) }}</ion-card-title>
@@ -23,13 +29,20 @@
         <ion-row>
           <ion-col size="12" size-md="6">
             <h3>Região:</h3>
-            <p>{{ formatName(gameVersionGroup.regions[0]?.name || 'Desconhecida') }}</p>
+            <p>
+              <a [routerLink]="['/region', gameVersionGroup.regions[0]?.name]">
+                {{ formatName(gameVersionGroup.regions[0]?.name ||
+                'Desconhecida') }}
+              </a>
+            </p>
           </ion-col>
 
           <ion-col size="12" size-md="6">
             <h3>Pokédex associada:</h3>
             <p>
-              <span *ngFor="let dex of gameVersionGroup.pokedexes; let last = last">
+              <span
+                *ngFor="let dex of gameVersionGroup.pokedexes; let last = last"
+              >
                 {{ formatName(dex.name) }}<span *ngIf="!last">, </span>
               </span>
             </p>
@@ -50,7 +63,10 @@
         <ion-row>
           <ion-col size="12">
             <h3>Métodos de aprendizado de movimento</h3>
-            <ion-chip *ngFor="let method of gameVersionGroup.move_learn_methods" color="tertiary">
+            <ion-chip
+              *ngFor="let method of gameVersionGroup.move_learn_methods"
+              color="tertiary"
+            >
               {{ formatName(method.name) }}
             </ion-chip>
           </ion-col>
