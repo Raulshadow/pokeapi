@@ -25,9 +25,9 @@ export class HttpService {
     return this.http.get(`${this.api}/version-group?limit=${limit}`);
   }
 
-  getGameDetail(id: number) {
+  getGameDetail(name: string) {
     // Esse método serve para auxiliar e pegar os detalhes da versão do grupo.
-    return this.http.get(`${this.api}/version-group/${id}`)
+    return this.http.get(`${this.api}/version-group/${name}`)
   }
 
   getPokemonByName(name: string) {

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/games"></ion-back-button>
     </ion-buttons>
-    <ion-title *ngIf="gameVersionGroup">{{ formatName(gameVersionGroup.name) }}</ion-title>
+    <ion-title *ngIf="gameVersionGroup">{{ formatName(gameVersionGroup?.name) }}</ion-title>
   </ion-toolbar>
 </ion-header>
 

@@ -24,8 +24,8 @@ export class GameDetailPage implements OnInit {
   constructor(private gameUtils: GameUtilsService, private utils:UtilsService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.getGamesDetails(+(id||0));
+    const name = this.route.snapshot.paramMap.get('name');
+    this.getGamesDetails(name||'');
   }
 
   getGameImage(name:string) {
@@ -36,8 +36,8 @@ export class GameDetailPage implements OnInit {
     return this.utils.formatName(name);
   }
 
-  private getGamesDetails(id: number) {
-    this.httpService.getGameDetail(id).subscribe(data => {
+  private getGamesDetails(name: string) {
+    this.httpService.getGameDetail(name).subscribe(data => {
       this.gameVersionGroup = data;
     });
   }

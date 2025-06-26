@@ -9,7 +9,7 @@
     <ion-item
       button 
       *ngFor="let gameVersion of gamesVersions"
-      [routerLink]="['/game', gameVersion.id]"
+      [routerLink]="['/game', gameVersion.name]"
       lines="full"
     >
       <ion-avatar slot="start">
