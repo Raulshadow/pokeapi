@@ -22,6 +22,11 @@ export const routes: Routes = [
           import('../pages/games/games.page').then((m) => m.GamesPage),
       },
       {
+        path: 'favorites',
+        loadComponent: () => 
+          import('../pages/favorites/favorites.page').then( m => m.FavoritesPage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/pokedex',
         pathMatch: 'full',
