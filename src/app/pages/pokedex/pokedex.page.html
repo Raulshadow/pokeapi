@@ -25,8 +25,17 @@
       >
         <ion-card [routerLink]="['/pokemon', pokemon.name]" button>
           <img [src]="pokemon.image" [alt]="pokemon.name" />
-          <ion-card-header>
+          <ion-card-header class="card-header-fav">
             <ion-card-title>#{{ pokemon.id }} - {{ pokemon.name | titlecase }}</ion-card-title>
+
+            <ion-button
+              fill="clear"
+              size="small"
+              color="warning"
+              (click)="toggleFavorite(pokemon.name); $event.stopPropagation()"
+            >
+              <ion-icon [name]="isFavorite(pokemon.name) ? 'star' : 'star-outline'"></ion-icon>
+            </ion-button>
           </ion-card-header>
         </ion-card>
       </ion-col>

@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [IonGrid, IonCol, IonRow, IonSpinner, NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonChip, IonCard, IonItem, IonList, IonButtons, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton, RouterLink]
 })
-export class GameDetailPage implements OnInit {
+export class GameDetailPage implements OnInit { // Página de detalhes dos jogos, exibindo as poucas informações que possuímos.
   private httpService = inject(HttpService);
   private route = inject(ActivatedRoute);
 
@@ -24,19 +24,19 @@ export class GameDetailPage implements OnInit {
   constructor(private gameUtils: GameUtilsService, private utils:UtilsService) { }
 
   ngOnInit() {
-    const name = this.route.snapshot.paramMap.get('name');
+    const name = this.route.snapshot.paramMap.get('name'); // Puxa a informação do jogo-versão a partir do nome, pois essa navegação pode vir da página da região resultando em precisar do nome.
     this.getGamesDetails(name||'');
   }
 
   getGameImage(name:string) {
-    return this.gameUtils.getGameImage(name);
+    return this.gameUtils.getGameImage(name); // Serviço de buscar imagem.
   }
 
   formatName(name:string) {
     return this.utils.formatName(name);
   }
 
-  private getGamesDetails(name: string) {
+  private getGamesDetails(name: string) { // Busca detalhes das jogos-versões.
     this.httpService.getGameDetail(name).subscribe(data => {
       this.gameVersionGroup = data;
     });
