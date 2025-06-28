@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonList, IonItem, IonAvatar, RouterLink]
 })
-export class RegionsPage implements OnInit {
+export class RegionsPage implements OnInit { // Tela de listagem das regiões, exibindo imagens que façam referência a região.
   private httpService = inject(HttpService);
   regions: any[] = [];
 

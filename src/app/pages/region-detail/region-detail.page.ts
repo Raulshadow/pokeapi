@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [NgFor, IonToolbar, IonHeader, IonTitle, IonSpinner, IonContent, CommonModule, FormsModule, IonCard, IonItem, IonList, IonLabel, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonBackButton, IonButtons, RouterLink]
 })
-export class RegionDetailPage implements OnInit {
+export class RegionDetailPage implements OnInit { // Página de detalhes da região, ela se baseia numa tela com listas, da pra navegar para a página de detalhes dos jogos versões.
   private httpService = inject(HttpService);
   private route = inject(ActivatedRoute);
 
@@ -34,7 +34,7 @@ export class RegionDetailPage implements OnInit {
     });
   }
 
-  getRegionImage(name: string) {
+  getRegionImage(name: string) { // Busca de imagem do jogo.
     return this.regionUtils.getGameImage(name)
   }
 

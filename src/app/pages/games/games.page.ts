@@ -15,7 +15,7 @@ import { UtilsService } from 'src/app/services/utils.service';
   standalone: true,
   imports: [NgFor, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonLabel, IonList, IonItem, IonAvatar, RouterLink],
 })
-export class GamesPage implements OnInit {
+export class GamesPage implements OnInit { // Página de listagem de jogos-versões, evitando exibir duplicatas japonesas + dlcs.
   private httpService = inject(HttpService);
   public gamesVersions: any[] = [];
 
@@ -39,12 +39,12 @@ export class GamesPage implements OnInit {
         filter(
           (game: { name: string; url: string }) => {
             const name = game.name.toLowerCase();
-            return !name.startsWith('the') && !name.includes('japan');
+            return !name.startsWith('the') && !name.includes('japan'); // Retirando as versões repetidas e dlcs que também vêm na resposta.
           }
         ).
         map(
           (game: { name: string; url: string }) => {
-            const id = game.url.split('/').filter(Boolean).pop(); // extrai o último número da URL
+            const id = game.url.split('/').filter(Boolean).pop(); // Extrai o último número da URL
             return { ...game, id };
           }
         )
