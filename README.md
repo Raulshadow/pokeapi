@@ -20,7 +20,8 @@ Acesse em: https://github.com/Raulshadow/pokeapi
         - ![Tela de Região](https://github.com/user-attachments/assets/4c4b7f96-5b19-455a-a3b3-b43d2f50ee04)
     3. Tela de Games:
         - Ao selecionar um game, exibir curiosidades e informações sobre o jogo, visto que a api entrega informações em formato de URL, talvez não tenha tanta informação útil.
-        - ![Tela de jogos](https://github.com/user-attachments/assets/7cbedef2-be3b-4745-b02e-b10541f04cd9)
+        - ![Tela de jogos](https://github.com/user-attachments/assets/6cdc3cff-49d2-401d-bb38-0b143ce6c6fd)
+        - ![Navegação jogo - região](https://github.com/user-attachments/assets/fec1c4e2-0e23-4067-946c-14859a4135df)
 5. Melhorar a experiência do usuário e interação do usuário ao possível, reconhecendo o básico da ergonomia, visto que não possuo o talento para design, mas consigo construir aquilo que é me pedido.
 
 17/06 - Inicio do projeto e página inicial, tela pokédex (listagem de pokémon).
