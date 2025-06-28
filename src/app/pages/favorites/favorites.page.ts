@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { HttpService } from 'src/app/services/http.service';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
@@ -11,7 +11,7 @@ import { NgFor } from '@angular/common';
   templateUrl: './favorites.page.html',
   styleUrls: ['./favorites.page.scss'],
   standalone: true,
-  imports: [RouterLink, NgFor, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [RouterLink, NgFor, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class FavoritesPage {
   public favoritePokemons: any[] = [];
