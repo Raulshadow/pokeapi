@@ -32,5 +32,7 @@ Acesse em: https://github.com/Raulshadow/pokeapi
 
 26/06 - Continuando adicionando estilização. Adição de rotas ligadas, colocando o jogo ligando a página da região assim como a região ligada aos jogos que ela é utilizada.
 
-27/06 - Tentar realizar uma melhor interação com o mapa, tornando possível de ter opções melhores.
+27/06 - ~~Tentar realizar uma melhor interação com o mapa, tornando possível de ter opções melhores.~~ Acabei adoecendo.
+
+28/06 - Adicionar Lista de Favoritos.
 
