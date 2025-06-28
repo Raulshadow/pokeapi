@@ -62,18 +62,40 @@ export class PokedexPage implements OnInit {
   }
 
   toggleFavorite(pokemonName: string) {
-    console.log(pokemonName);
     const index = this.favorites.indexOf(pokemonName);
+    let action: 'adicionado' | 'removido';
+  
     if (index > -1) {
       this.favorites.splice(index,1); // caso ele esteja na lista, significa que a pessoa esta tirando, logo, retira o nome do pokémon.
+      action = 'removido';
     } else {
-      this.favorites.push(pokemonName); // caso não seja encontrado, então ele tem que ser adicionado na lista.
+      this.favorites.push(pokemonName); // caso não seja enconSWtrado, então ele tem que ser adicionado na lista.
+      action = 'adicionado';
     }
 
+    // this.sendWebHookSimulation(pokemonName, action); // Aqui simula o envio de dados para um backend ficticio, construi um simples servidor express com uma api, mas é extremamente simples.
     this.saveFavorites(); // salvar no armazenamento local
   }
 
   isFavorite(pokemonName:string): boolean { // Ccheca se o pokémon está salvo como favorito no armazenamento.
     return this.favorites.includes(pokemonName);
+  }
+
+  sendWebHookSimulation(pokemonName: string, action: 'adicionado' | 'removido') {
+    fetch('http://localhost:3000/api/webhook', {
+      method: 'POST',
+      body: JSON.stringify({
+        event: 'pokemon_favorite_change', // evento para ser informado ao servidor, do que foi realizado.
+        data: {
+          name: pokemonName,
+          action: action, // informação do que foi realizado e como o servidor irá utilizar ela.
+          timestamp: new Date().toISOString()
+        }
+      })
+    }).then(() => {
+      console.log(`Webhook enviado com sucesso: ${pokemonName} ${action}`);
+    }).catch(err => {
+      console.error('Erro ao enviar webhook', err);
+    });
   }
 }
