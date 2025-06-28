@@ -9,10 +9,18 @@ Acesse em: https://github.com/Raulshadow/pokeapi
     1. Tela de Listagem de Pokémon:
         - Ao selecionar um pokémon, navegar para a página de detalhes, exibindo um png do sprite do pokémon, informações extras como descrição, além de colocar também as curiosidades, como movimentos e etc, informações interessante que um jogador de pokémon gostaria de saber.
         - Adicionar pokémons aos favoritos, podendo observar em uma lista separada os favoritos.
+        - ![image](https://github.com/user-attachments/assets/699fcd7f-6ae4-413d-b523-4de698efd304) ![image](https://github.com/user-attachments/assets/b00841cb-0bb0-4043-b6f8-f6beb6f3a83e)
+        - As imagens acima são as telas de pokédex e de favoritos, respectivamente (exibido em dois tipos de telas diferentes já que em termos de usabilidade são idênticas).
+        - ![Pokedex e pesquisa](https://github.com/user-attachments/assets/9897dd82-bd1c-493a-b410-a544d08f1afc)
+        - ![Tela de Favoritos](https://github.com/user-attachments/assets/945a7ca0-9280-408d-8c93-aa83d106f48f)
     2. Tela de Listagem de Regiões:
         - Ao selecionar uma região, navegar para a página de detalhes e adicionar um mapa da região, se possível permitir um clique no mapa para mostrar as informações da cidade clicada. Na mesma tela exibir quais pokémons podem ser encontrados na região, ao clicar na cidade, exibir as poucas informações que temos.
+        - ![image](https://github.com/user-attachments/assets/3380953d-cf4f-435c-b8ff-c92d20d85bfc)
+        - ![image](https://github.com/user-attachments/assets/a7919790-ce02-4c38-98b1-10594acb4b1e)
+        - ![Tela de Região](https://github.com/user-attachments/assets/4c4b7f96-5b19-455a-a3b3-b43d2f50ee04)
     3. Tela de Games:
         - Ao selecionar um game, exibir curiosidades e informações sobre o jogo, visto que a api entrega informações em formato de URL, talvez não tenha tanta informação útil.
+        - ![Tela de jogos](https://github.com/user-attachments/assets/7cbedef2-be3b-4745-b02e-b10541f04cd9)
 5. Melhorar a experiência do usuário e interação do usuário ao possível, reconhecendo o básico da ergonomia, visto que não possuo o talento para design, mas consigo construir aquilo que é me pedido.
 
 17/06 - Inicio do projeto e página inicial, tela pokédex (listagem de pokémon).
