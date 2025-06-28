@@ -8,6 +8,7 @@ Acesse em: https://github.com/Raulshadow/pokeapi
 4. Criadas todas as telas desejadas, adicionar uma navegação no click das listas:
     1. Tela de Listagem de Pokémon:
         - Ao selecionar um pokémon, navegar para a página de detalhes, exibindo um png do sprite do pokémon, informações extras como descrição, além de colocar também as curiosidades, como movimentos e etc, informações interessante que um jogador de pokémon gostaria de saber.
+        - Adicionar pokémons aos favoritos, podendo observar em uma lista separada os favoritos.
     2. Tela de Listagem de Regiões:
         - Ao selecionar uma região, navegar para a página de detalhes e adicionar um mapa da região, se possível permitir um clique no mapa para mostrar as informações da cidade clicada. Na mesma tela exibir quais pokémons podem ser encontrados na região, ao clicar na cidade, exibir as poucas informações que temos.
     3. Tela de Games:
