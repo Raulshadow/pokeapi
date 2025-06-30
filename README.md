@@ -44,5 +44,5 @@ Acesse em: https://github.com/Raulshadow/pokeapi
 
 27/06 - ~~Tentar realizar uma melhor interação com o mapa, tornando possível de ter opções melhores.~~ Acabei adoecendo.
 
-28/06 - Adicionar Lista de Favoritos.
+28/06 - Adicionar Lista de Favoritos. | Completando os requisitos e extras, finalizando o projeto, temporariamente, caso pense em mais algo, irei adicionar.
 
